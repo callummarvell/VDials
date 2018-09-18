@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">VDials</string>
+    <string name="left_bank">Left Bank</string>
+    <string name="edit">Edit</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+
+    <string-array name="ships">
+        <item>Tie Advanced x1</item>
+        <item>Tie Striker</item>
+    </string-array>
 </resources>
