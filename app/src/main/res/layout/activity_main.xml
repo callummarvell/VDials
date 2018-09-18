@@ -25,4 +25,5 @@
         android:contentDescription="@string/left_bank"
         android:src="@drawable/icon_maneuver_bank_left_red"/>
 
+    <include layout="@layout/fragment_dial"/>
 </LinearLayout>

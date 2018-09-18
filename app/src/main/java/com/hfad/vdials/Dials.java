@@ -1,9 +1,10 @@
 package com.hfad.vdials;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Dials{
-    private Map<String, Maneuver[]> fleet;
+    private Map<String, Maneuver[]> fleet = new HashMap<String, Maneuver[]>();
     public Dials(){
         this.buildDials();
     }

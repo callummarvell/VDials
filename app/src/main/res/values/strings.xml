@@ -4,6 +4,7 @@
     <string name="edit">Edit</string>
     <string name="show">Show</string>
     <string name="hide">Hide</string>
+    <string name="direction">Maneuver Direction</string>
 
     <string-array name="ships">
         <item>Tie Advanced x1</item>

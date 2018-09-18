@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
@@ -44,6 +45,9 @@ class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
         CardView cardView = holder.cardView;
         TextView textView = (TextView)cardView.findViewById(R.id.ship_name);
         textView.setText(names[position]);
+        Spinner spinner = (Spinner)cardView.findViewById(R.id.dial_spinner);
+        SpinnerAdapter adapter = new SpinnerAdapter(cardView.getContext(), R.layout.spinner_value_layout, dials[position]);
+        spinner.setAdapter(adapter);
     }
 
 }
