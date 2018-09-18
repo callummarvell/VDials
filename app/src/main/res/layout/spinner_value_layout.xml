@@ -6,16 +6,20 @@
     android:orientation="vertical">
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp">
         <TextView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:id="@+id/spinnerText"
+            android:textSize="37dp"
+            android:paddingRight="5dp"
             />
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/spinnerImages"
-            android:contentDescription="@string/direction"/>
+            android:contentDescription="@string/direction"
+            />
     </TableRow>
 </TableLayout>
