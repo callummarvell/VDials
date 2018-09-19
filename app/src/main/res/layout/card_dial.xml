@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -36,12 +35,14 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/edit"
+                        android:id="@+id/edit_button"
                         />
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/show"
+                        android:id="@+id/show_button"
                         />
                 </LinearLayout>
             </LinearLayout>
