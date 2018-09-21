@@ -67,6 +67,11 @@ class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
                 Spinner spinner = (Spinner) cardView.findViewById(R.id.dial_spinner);
                 spinner.setVisibility(View.INVISIBLE-spinner.getVisibility());
                 Log.i("spinner value",Integer.toString(spinner.getVisibility()));
+                Button button = (Button) cardView.findViewById(R.id.show_button);
+                if (button.getText().equals("Show"))
+                    button.setText("Hide");
+                else
+                    button.setText("Show");
             }
         });
         holder.edit_button.setOnClickListener(new View.OnClickListener() {
