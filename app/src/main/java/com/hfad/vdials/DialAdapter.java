@@ -13,10 +13,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
 
-    private String[] names;
-    private Maneuver[][] dials;
+    private ArrayList<String> names;
+    private ArrayList<Maneuver[]> dials;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private CardView cardView;
@@ -31,13 +34,13 @@ class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
     }
 
     public DialAdapter(String[] names, Maneuver[][] dials){
-        this.names = names;
-        this.dials = dials;
+        this.names = new ArrayList<>(Arrays.asList(names));
+        this.dials = new ArrayList<>(Arrays.asList(dials));
     }
 
     @Override
     public int getItemCount(){
-        return names.length;
+        return names.size();
     }
 
     @Override
@@ -48,12 +51,12 @@ class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
         return new ViewHolder(cv);
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
+    public void onBindViewHolder(ViewHolder holder, final int position){
         final CardView cardView = holder.cardView;
         TextView textView = (TextView)cardView.findViewById(R.id.ship_name);
-        textView.setText(names[position]);
+        textView.setText(names.get(position));
         Spinner spinner = (Spinner)cardView.findViewById(R.id.dial_spinner);
-        SpinnerAdapter adapter = new SpinnerAdapter(cardView.getContext(), R.layout.spinner_value_layout, dials[position]);
+        SpinnerAdapter adapter = new SpinnerAdapter(cardView.getContext(), R.layout.spinner_value_layout, dials.get(position));
         spinner.setAdapter(adapter);
         holder.show_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +72,9 @@ class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
         holder.edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                names.remove(position);
+                dials.remove(position);
+                notifyDataSetChanged();
             }
         });
     }

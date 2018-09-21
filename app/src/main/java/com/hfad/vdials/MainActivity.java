@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("RUNNING","onCreateView is running");
+        Log.d("RUNNING", "onCreateView is running");
         RecyclerView dialRecycler = findViewById(R.id.dial_recycler);
         String[] shipNames = new String[Ship.ships.length];
         for (int i = 0; i < shipNames.length; i++) {

@@ -2,6 +2,7 @@
     <string name="app_name">VDials</string>
     <string name="left_bank">Left Bank</string>
     <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
     <string name="show">Show</string>
     <string name="hide">Hide</string>
     <string name="direction">Maneuver Direction</string>
