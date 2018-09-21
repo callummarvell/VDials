@@ -1,5 +1,7 @@
 package com.hfad.vdials;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         dialRecycler.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         dialRecycler.setLayoutManager(layoutManager);
+
+        FloatingActionButton myFab = (FloatingActionButton) findViewById(R.id.fab);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent myIntent = new Intent(v.getContext(), AddActivity.class);
+                v.getContext().startActivity(myIntent);
+            }
+        });
     }
 
 }
