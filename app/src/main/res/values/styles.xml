@@ -12,5 +12,9 @@
         <item name="colorAccent">@color/accent_material_dark_1</item>
         <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
     </style>
+    <style name="PopupAnim">
+        <item name="android:windowEnterAnimation">@anim/popup_appear</item>
+        <item name="android:windowExitAnimation">@anim/popup_vanish</item>
+    </style>
 
 </resources>
