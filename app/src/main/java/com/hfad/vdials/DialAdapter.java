@@ -43,6 +43,12 @@ class DialAdapter extends RecyclerView.Adapter<DialAdapter.ViewHolder>{
         return names.size();
     }
 
+    public void dataChange(Ship newship) {
+        names.add(newship.getName());
+        dials.add(newship.getDial());
+        notifyDataSetChanged();
+    }
+
     @Override
     public DialAdapter.ViewHolder onCreateViewHolder(
             ViewGroup parent, int viewType){

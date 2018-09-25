@@ -20,6 +20,8 @@ import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < shipDials.length; i++) {
             shipDials[i] = Ship.ships[i].getDial();
         }
-        DialAdapter adapter = new DialAdapter(shipNames, shipDials);
+        final DialAdapter adapter = new DialAdapter(shipNames, shipDials);
         dialRecycler.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         dialRecycler.setLayoutManager(layoutManager);
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 /*Intent myIntent = new Intent(v.getContext(), AddActivity.class);
                 v.getContext().startActivity(myIntent);*/
                 LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-                View popupView = inflater.inflate(R.layout.add_window,null);
+                final View popupView = inflater.inflate(R.layout.add_window,null);
 
                 int width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 int height = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -64,42 +66,48 @@ public class MainActivity extends AppCompatActivity {
                 // show the popup window
                 // which view you pass in doesn't matter, it is only used for the window token
                 popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
-                frame.getForeground().setAlpha(220);
+                frame.getForeground().setAlpha(240);
 
                 Spinner spinner = popupView.findViewById(R.id.ship_selector);
 
                 List<String> ships = new ArrayList<>();
-                ships.add("TIE Advanced x1");
-                ships.add("TIE Striker");
-                ships.add("TIE Phantom");
-                ships.add("TIE/ln Fighter");
-                ships.add("TIE/fo Fighter");
-                ships.add("Auzituck Gunship");
-                ships.add("RZ-1 A-Wing");
-                ships.add("T-65 X-Wing");
-                ships.add("T-70 X-Wing");
-                ships.add("BTL-A4 Y-Wing");
-                ships.add("A/SF-01 B-Wing");
+                for (Ship ship:Ship.ships) {
+                    if (ship!=null)
+                        if (!ships.contains(ship.getName()))
+                            ships.add(ship.getName());
+                }
                 ArrayAdapter<String> spin_adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_spinner_value, ships);
                 spinner.setAdapter(spin_adapter);
 
                 // dismiss the popup window when touched
-                popupView.setOnTouchListener(new View.OnTouchListener() {
+                /*popupView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         popupWindow.dismiss();
                         frame.getForeground().setAlpha(0);
                         return true;
                     }
-                });
+                });*/
 
                 Button add_btn = popupView.findViewById(R.id.confirm_add_button);
 
                 add_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent myIntent = new Intent(view.getContext(), AddActivity.class);
-                        view.getContext().startActivity(myIntent);
+                        Spinner spinner = popupView.findViewById(R.id.ship_selector);
+                        String selection = spinner.getSelectedItem().toString();
+                        Log.i("selection",selection);
+                        //Intent myIntent = new Intent(view.getContext(), AddActivity.class);
+                        //view.getContext().startActivity(myIntent);
+                        //Ship[] old_ships = Ship.ships;
+                        Ship[] new_ships = new Ship[Ship.ships.length+1];
+                        for (int i=0;i<Ship.ships.length;i++){
+                            new_ships[i] = Ship.ships[i];
+                        }
+                        Ship newship = new Ship(selection);
+                        new_ships[Ship.ships.length] = newship;
+                        Ship.ships = new_ships;
+                        adapter.dataChange(newship);
                     }
                 });
 

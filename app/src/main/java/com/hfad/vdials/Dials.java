@@ -131,6 +131,26 @@ public class Dials{
         Phantom[16] = new Maneuver(R.drawable.icon_maneuver_k_turn_red, 4);
         fleet.put("TIE Phantom", Phantom);
 
+        Maneuver[] TIE_Bomber = new Maneuver[16];
+        TIE_Bomber[0] = new Maneuver(R.drawable.icon_maneuver_bank_left,1);
+        TIE_Bomber[1] = new Maneuver(R.drawable.icon_maneuver_bank_right,1);
+        TIE_Bomber[2] = new Maneuver(R.drawable.icon_maneuver_straight_blue,1);
+        TIE_Bomber[3] = new Maneuver(R.drawable.icon_maneuver_turn_left,2);
+        TIE_Bomber[4] = new Maneuver(R.drawable.icon_maneuver_turn_right,2);
+        TIE_Bomber[5] = new Maneuver(R.drawable.icon_maneuver_bank_left_blue,2);
+        TIE_Bomber[6] = new Maneuver(R.drawable.icon_maneuver_bank_right_blue,2;
+        TIE_Bomber[7] = new Maneuver(R.drawable.icon_maneuver_straight_blue,2);
+        TIE_Bomber[8] = new Maneuver(R.drawable.icon_maneuver_turn_left,3);
+        TIE_Bomber[9] = new Maneuver(R.drawable.icon_maneuver_turn_right,3);
+        TIE_Bomber[10] = new Maneuver(R.drawable.icon_maneuver_bank_left,3);
+        TIE_Bomber[11] = new Maneuver(R.drawable.icon_maneuver_bank_right,3);
+        TIE_Bomber[12] = new Maneuver(R.drawable.icon_maneuver_straight_blue,3);
+        TIE_Bomber[13] = new Maneuver(R.drawable.icon_maneuver_k_turn_red,3);
+        TIE_Bomber[14] = new Maneuver(R.drawable.icon_maneuver_straight_blue,4);
+        TIE_Bomber[15] = new Maneuver(R.drawable.icon_maneuver_k_turn_red,5);
+        fleet.put("TIE/sa Bomber", TIE_Bomber);
+
+        Maneuver[] YT1300 = new Maneuver[17];
 
         Maneuver[] Auzituck_Gunship = new Maneuver[15];
         Auzituck_Gunship[0] = new Maneuver(R.drawable.icon_maneuver_stop_red, 0);

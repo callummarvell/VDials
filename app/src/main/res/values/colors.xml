@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="maneuverBlue">#29c2f4</color>
     <color name="accent_material_dark_1">#ffcf40</color>
+    <color name="spinner">#888888</color>
+    <color name="background_popup">#00222222</color>
 </resources>
