@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 Spinner spinner = popupView.findViewById(R.id.ship_selector);
 
                 List<String> ships = new ArrayList<>();
-                for (Ship ship:Ship.ships) {
+                for (Ship ship:Ship.all_ships) {
                     if (ship!=null)
                         if (!ships.contains(ship.getName()))
                             ships.add(ship.getName());

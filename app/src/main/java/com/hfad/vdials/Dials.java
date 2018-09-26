@@ -138,7 +138,7 @@ public class Dials{
         TIE_Bomber[3] = new Maneuver(R.drawable.icon_maneuver_turn_left,2);
         TIE_Bomber[4] = new Maneuver(R.drawable.icon_maneuver_turn_right,2);
         TIE_Bomber[5] = new Maneuver(R.drawable.icon_maneuver_bank_left_blue,2);
-        TIE_Bomber[6] = new Maneuver(R.drawable.icon_maneuver_bank_right_blue,2;
+        TIE_Bomber[6] = new Maneuver(R.drawable.icon_maneuver_bank_right_blue,2);
         TIE_Bomber[7] = new Maneuver(R.drawable.icon_maneuver_straight_blue,2);
         TIE_Bomber[8] = new Maneuver(R.drawable.icon_maneuver_turn_left,3);
         TIE_Bomber[9] = new Maneuver(R.drawable.icon_maneuver_turn_right,3);
@@ -151,6 +151,24 @@ public class Dials{
         fleet.put("TIE/sa Bomber", TIE_Bomber);
 
         Maneuver[] YT1300 = new Maneuver[17];
+        YT1300[0] = new Maneuver(R.drawable.icon_maneuver_bank_left,1);
+        YT1300[1] = new Maneuver(R.drawable.icon_maneuver_bank_right,1);
+        YT1300[2] = new Maneuver(R.drawable.icon_maneuver_straight_blue,1);
+        YT1300[3] = new Maneuver(R.drawable.icon_maneuver_turn_left,2);
+        YT1300[4] = new Maneuver(R.drawable.icon_maneuver_turn_right,2);
+        YT1300[5] = new Maneuver(R.drawable.icon_maneuver_bank_left_blue,2);
+        YT1300[6] = new Maneuver(R.drawable.icon_maneuver_bank_right_blue,2);
+        YT1300[7] = new Maneuver(R.drawable.icon_maneuver_straight_blue,2);
+        YT1300[8] = new Maneuver(R.drawable.icon_maneuver_turn_left,3);
+        YT1300[9] = new Maneuver(R.drawable.icon_maneuver_turn_right,3);
+        YT1300[10] = new Maneuver(R.drawable.icon_maneuver_bank_left,3);
+        YT1300[11] = new Maneuver(R.drawable.icon_maneuver_bank_right,3);
+        YT1300[12] = new Maneuver(R.drawable.icon_maneuver_straight_blue,3);
+        YT1300[13] = new Maneuver(R.drawable.icon_maneuver_segnor_left_red,3);
+        YT1300[14] = new Maneuver(R.drawable.icon_maneuver_segnor_right_red,3);
+        YT1300[15] = new Maneuver(R.drawable.icon_maneuver_straight,4);
+        YT1300[16] = new Maneuver(R.drawable.icon_maneuver_k_turn_red,4);
+        fleet.put("Modified YT-1300 Light Freighter", YT1300);
 
         Maneuver[] Auzituck_Gunship = new Maneuver[15];
         Auzituck_Gunship[0] = new Maneuver(R.drawable.icon_maneuver_stop_red, 0);
