@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         new_ships[Ship.ships.length] = newship;
                         Ship.ships = new_ships;
                         adapter.dataChange(newship);
+                        popupWindow.dismiss();
                     }
                 });
 
